@@ -35,3 +35,22 @@ Stretch goals:
 - make the contract a utility that can be used by David, Emma and anybody with an address
 - make you, the owner of the contract, take a cut of the Ethers smaller than what it would cost Alice to deploy the same contract herself
 - did you degrade safety in the name of adding features?
+
+## Useful Command
+
+```
+$ ./node_modules/.bin/truffle version
+$ ./node_modules/.bin/truffle init
+$ ./node_modules/.bin/truffle compile
+$ ./node_modules/.bin/truffle test
+$ ./node_modules/.bin/truffle migrate
+```
+
+```
+$ mkdir temp_unbox
+$ cd temp_unbox
+$ ../node_modules/.bin/truffle init
+$ mv * ..
+$ cd ..
+$ rmdir temp_unbox
+```
