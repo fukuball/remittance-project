@@ -65,3 +65,4 @@ window.addEventListener('load', function() {
 });
 
 require("file-loader?name=../index.html!../index.html");
+require("file-loader?name=../hello-world.html!../hello-world.html");
