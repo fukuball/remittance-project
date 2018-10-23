@@ -36,6 +36,26 @@ Stretch goals:
 - make you, the owner of the contract, take a cut of the Ethers smaller than what it would cost Alice to deploy the same contract herself
 - did you degrade safety in the name of adding features?
 
+## Install
+
+```
+$ npm install
+```
+
+## Compile
+
+```
+./node_modules/.bin/truffle compile
+```
+
+## Run Test
+
+```
+npm test test/test_hello_standalone.js
+```
+
+# Appendix
+
 ## Useful Command
 
 ```
@@ -45,6 +65,8 @@ $ ./node_modules/.bin/truffle compile
 $ ./node_modules/.bin/truffle test
 $ ./node_modules/.bin/truffle migrate
 ```
+
+## Truffle init
 
 ```
 $ mkdir temp_unbox
