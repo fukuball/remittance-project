@@ -45,14 +45,54 @@ $ npm install
 ## Compile
 
 ```
-./node_modules/.bin/truffle compile
+$ ./node_modules/.bin/truffle compile
+```
+
+## Migrate
+
+```
+$ ./node_modules/.bin/truffle migrate
 ```
 
 ## Run Test
 
 ```
-npm test test/test_hello_standalone.js
+$ npm test test/test_hello_standalone.js
 ```
+
+## Create GUI
+
+```
+$ mkdir -p app/js
+$ touch app/js/app.js
+$ ./node_modules/.bin/create-html --title "Hello World" --script "js/app.js" --output app/index.html
+```
+
+## Bulid Dapp
+
+```
+$ ./node_modules/.bin/webpack-cli --mode development
+```
+
+## Run Dapp
+
+On terminal 1
+
+```
+$ ganache-cli
+```
+
+On terminal 2
+
+```
+$ truffle migrate
+$ cd dapp
+$ ln -s ../build/contracts contracts
+$ cd ..
+$ php -S 0.0.0.0:8000 -t dapp/
+```
+
+Open browser to: http://localhost:8000/
 
 # Appendix
 
