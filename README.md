@@ -60,6 +60,12 @@ $ ./node_modules/.bin/truffle migrate
 $ npm test test/test_hello_standalone.js
 ```
 
+or
+
+```
+$ ./node_modules/.bin/truffle migrate
+``
+
 ## Create GUI
 
 ```
