@@ -23,12 +23,14 @@ contract('Remittance', function(accounts) {
             {   exchanger:                 carol,
                 password1: "one-time-password-1",
                 password2: "one-time-password-2",
-                amount:                  "10240"
+                amount:                  "10240",
+                blockDuration:              3000
             },
             {   exchanger:                 carol,
                 password1: "one-time-password-3",
                 password2: "one-time-password-4",
-                amount:                  "20480"
+                amount:                  "20480",
+                blockDuration:              3000
             },
         ];
 
@@ -38,6 +40,7 @@ contract('Remittance', function(accounts) {
                     carol,
                     values.password1,
                     values.password2,
+                    values.blockDuration,
                     {
                         from: alice,
                         value: values.amount
@@ -48,7 +51,7 @@ contract('Remittance', function(accounts) {
                 assert.strictEqual(txObj.logs[0].args.sender, alice);
                 assert.strictEqual(txObj.logs[0].args.exchanger, carol);
                 //assert.strictEqual(txObj.logs[0].args.passwordHash, hash);
-                assert.strictEqual(txObj.logs[0].args.value.toString(10), values.amount);
+                assert.strictEqual(txObj.logs[0].args.amount.toString(10), values.amount);
                 const contractEther = await web3.eth.getBalancePromise(remittanceContract.address);
                 assert.strictEqual(contractEther.toString(10), values.amount);
             });
